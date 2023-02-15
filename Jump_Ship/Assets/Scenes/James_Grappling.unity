@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Floor_011
       objectReference: {fileID: 0}
+    - target: {fileID: 1818237785379436, guid: d99e4aa50932b05448e4ce72fed91c91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4500970435646606, guid: d99e4aa50932b05448e4ce72fed91c91, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -775,7 +779,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82b4cfb044cb95a479319ede4015dc37, type: 2}
+  - {fileID: 2100000, guid: f631b63d85bab6143b7c724f601f670b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -801,7 +805,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -819,8 +823,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9583578, g: 0, b: 1, a: 1}
+      key1: {r: 0, g: 1, b: 0.8417554, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
