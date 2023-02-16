@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Invisibility : MonoBehaviour
 {
+    public GameObject player;
     public Material defaultSkin;
     public Material invisibleSkin;
 
-    public bool detectable;
-
-    public GameObject player;
-
     MeshRenderer meshRenderer;
+
+    public static bool detectable;
+    bool timerStarted;
+
+    float invisibleTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         meshRenderer = player.GetComponent<MeshRenderer>();
         defaultSkin = meshRenderer.material;
+
+        detectable = true;
+        timerStarted = false;
     }
 
     // Update is called once per frame
@@ -25,7 +30,27 @@ public class Invisibility : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
+            detectable = false;
             meshRenderer.material = invisibleSkin;
+            timerStarted = true;
+        }
+        if (timerStarted)
+        {
+            AbilityReset();
+        }
+    }
+
+    void AbilityReset()
+    {
+        invisibleTimer += Time.deltaTime;
+        Debug.Log(invisibleTimer);
+
+        if (invisibleTimer > 5.0f)
+        {
+            detectable = true;
+            meshRenderer.material = defaultSkin;
+            invisibleTimer = 0.0f;
+            timerStarted = false;
         }
     }
 }
