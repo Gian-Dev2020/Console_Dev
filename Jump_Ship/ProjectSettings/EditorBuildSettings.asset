@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Invisibility_Scene.unity
+    guid: 81e8d1c04b23e6749a629eb4aa0318dd
   m_configObjects: {}
