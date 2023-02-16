@@ -22,6 +22,7 @@ public class GrapplingPoint : MonoBehaviour
     [SerializeField] private bool inGrappleRange = false;
     [SerializeField] private bool currentlyGrappling = false;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject RopeStartPoint;
 
 
 
@@ -81,7 +82,7 @@ public class GrapplingPoint : MonoBehaviour
 
         // rope/grapple shoots into the grapple point
         lr.enabled = true;
-        lr.SetPosition(0, Player.transform.position);
+        lr.SetPosition(0, RopeStartPoint.transform.position);
         lr.SetPosition(1, EndPos);
 
         // move the player to the grapple point whilst decreasign size of rope
@@ -92,7 +93,7 @@ public class GrapplingPoint : MonoBehaviour
         //direction.y = 0;
 
         // turns to face grappling point
-        //Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
+        Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
         Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z)), rotationSpeed * Time.deltaTime);
 
         if (direction.magnitude > 0.1)
