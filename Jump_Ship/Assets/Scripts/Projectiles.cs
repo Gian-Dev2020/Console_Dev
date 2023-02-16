@@ -11,10 +11,13 @@ public class Projectiles : MonoBehaviour
     [SerializeField] float h = 25; // height arc
     [SerializeField] float gravity = -18;
     [SerializeField] bool debug_path;
+    [SerializeField] LineRenderer line_path;
+    [SerializeField] int line_segments;
 
     private void Start()
     {
         ball.useGravity = false;
+        line_path.positionCount = line_segments;
     }
 
     // Update is called once per frame
@@ -49,6 +52,19 @@ public class Projectiles : MonoBehaviour
 
         
         return new LaunchData(velocity_xz + velocity_y * -Mathf.Sign(gravity), time);
+    }
+
+    Vector3 CalculatePosInTime(Vector3 initial_velocity, float time)
+    {
+        Vector3 velocity_xz = initial_velocity;
+        initial_velocity.y = 0f;
+
+        Vector3 result = ball.position + initial_velocity * time;
+        float position_y = (-0.5f * Mathf.Abs(Physics.gravity.y) * (time * time)) + (initial_velocity.y * time) + ball.position.y;
+
+        result.y = position_y;
+
+        return result;
     }
 
     //Vector3 CalculateLaunchVelocity()
