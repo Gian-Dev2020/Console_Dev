@@ -12,6 +12,8 @@ public class Projectiles : MonoBehaviour
     [SerializeField] float gravity = -18;
     [SerializeField] bool debug_path;
 
+    [SerializeField] Trajectory_Line trajectory_line;
+
     private void Start()
     {
         ball.useGravity = false;
@@ -22,17 +24,20 @@ public class Projectiles : MonoBehaviour
     void Update()
     {
 
+        
+
         if (debug_path)
         {
             DrawPath();
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             target.Translate(0, 0, 0.05f);
+
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             Launch();
         }
@@ -54,7 +59,7 @@ public class Projectiles : MonoBehaviour
         Vector3 velocity_y = Vector3.up * Mathf.Sqrt(-2 * gravity * h);
         Vector3 velocity_xz = displacement_xz / time;
 
-        
+
         return new LaunchData(velocity_xz + velocity_y * -Mathf.Sign(gravity), time);
     }
 
@@ -82,9 +87,11 @@ public class Projectiles : MonoBehaviour
             float simulation_time = i / (float)resolution * launch_data.time_to_target;
             Vector3 displacement = launch_data.initial_velocity * simulation_time + Vector3.up * gravity * simulation_time * simulation_time / 2f;
             Vector3 draw_point = ball.position + displacement;
-            Debug.DrawLine(previous_draw_point, draw_point, Color.green);
-           
+            //Debug.DrawLine(previous_draw_point, draw_point, Color.green);
+
             previous_draw_point = draw_point;
+
+            trajectory_line.ShowTrajectory(ball.position, ball.velocity) ;
         }
     }
 
