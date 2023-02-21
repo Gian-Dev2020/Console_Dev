@@ -15,19 +15,26 @@ public class Projectiles : MonoBehaviour
     private void Start()
     {
         ball.useGravity = false;
+        target.position = ball.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Launch();
-        }
 
         if (debug_path)
         {
             DrawPath();
+        }
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            target.Translate(0, 0, 0.05f);
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            Launch();
         }
     }
 
