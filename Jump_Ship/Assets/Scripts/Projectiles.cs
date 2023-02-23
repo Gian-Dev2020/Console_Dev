@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
     [SerializeField] Rigidbody ball;
     [SerializeField] Transform target;
+    [SerializeField] GameObject player;
+    [SerializeField] SphereCollider ball_collider;
+
+
 
     // The height 
     [SerializeField] float h = 25; // height arc
@@ -17,19 +22,13 @@ public class Projectiles : MonoBehaviour
     private void Start()
     {
         ball.useGravity = false;
-        target.position = ball.position;
+        target.position = player.transform.position;
+        target.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-
-        if (debug_path)
-        {
-            DrawPath();
-        }
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -41,13 +40,23 @@ public class Projectiles : MonoBehaviour
         {
             Launch();
         }
+
+        trajectory_line.ShowTrajectory(ball.position, ball.velocity);
     }
 
     void Launch()
     {
-        Physics.gravity = Vector3.up * gravity;
-        ball.useGravity = true;
-        ball.velocity = CalculateLaunchData().initial_velocity;
+        if (!ball.IsDestroyed())
+        {
+            ball.velocity = CalculateLaunchData().initial_velocity;
+            target.gameObject.SetActive(true);
+            Physics.gravity = Vector3.up * gravity;
+            ball.useGravity = true;
+
+        }
+
+        return;
+
     }
 
     LaunchData CalculateLaunchData()
@@ -91,9 +100,10 @@ public class Projectiles : MonoBehaviour
 
             previous_draw_point = draw_point;
 
-            trajectory_line.ShowTrajectory(ball.position, ball.velocity) ;
+
         }
     }
+
 
     struct LaunchData
     {
