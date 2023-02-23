@@ -10,27 +10,54 @@ public class Character_Controller : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] float sensitivity;
+
+    Rigidbody rb;
     Vector2 turn;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
-       
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-        controller.Move(move * speed * Time.deltaTime);
-
         rotation_Y = Input.GetAxis("Mouse X") * sensitivity;
         rotation_X = Input.GetAxis("Mouse Y") * sensitivity;
 
-        this.transform.Rotate(0f, rotation_Y, 0f, Space.World);
-       
-       
+        this.transform.Rotate(0f, rotation_Y, 0f, Space.Self);
+
+        Movement();
+    }
+
+    void Movement()
+    {
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.forward * Time.deltaTime * speed;
+
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += -transform.forward * Time.deltaTime * speed;
+
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += -transform.right * Time.deltaTime * speed;
+
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * Time.deltaTime * speed;
+
+        }
     }
 }
