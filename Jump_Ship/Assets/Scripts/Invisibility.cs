@@ -8,7 +8,8 @@ public class Invisibility : MonoBehaviour
     public Material defaultSkin;
     public Material invisibleSkin;
 
-    MeshRenderer meshRenderer;
+    SkinnedMeshRenderer meshRenderer;
+    //MeshRenderer meshRenderer;
 
     public static bool detectable;
     bool timerStarted;
@@ -18,7 +19,7 @@ public class Invisibility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = player.GetComponent<MeshRenderer>();
+        meshRenderer = player.GetComponent<SkinnedMeshRenderer>();
         defaultSkin = meshRenderer.material;
 
         detectable = true;
