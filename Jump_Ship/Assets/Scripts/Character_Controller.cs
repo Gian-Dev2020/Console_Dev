@@ -8,9 +8,11 @@ public class Character_Controller : MonoBehaviour
     float rotation_X = 0f;
     float rotation_Y = 0f;
 
-    [SerializeField] float speed;
     [SerializeField] float sensitivity;
 
+    float speed;
+    float sprint_speed = 10f;
+    float walk_speed = 5f;
     Rigidbody rb;
     Vector2 turn;
 
@@ -19,6 +21,7 @@ public class Character_Controller : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+        speed = walk_speed;
 
     }
 
@@ -35,7 +38,12 @@ public class Character_Controller : MonoBehaviour
 
     void Movement()
     {
+        Sprinting();
+        Walking();
+    }
 
+    void Walking()
+    {
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * Time.deltaTime * speed;
@@ -58,6 +66,19 @@ public class Character_Controller : MonoBehaviour
         {
             transform.position += transform.right * Time.deltaTime * speed;
 
+        }
+    }
+
+    void Sprinting()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            speed = sprint_speed;
+        }
+
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            speed = walk_speed;
         }
     }
 }
