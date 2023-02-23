@@ -26,10 +26,10 @@ public class Character_Controller : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        rotation_Y += Input.GetAxis("Mouse X") * sensitivity;
-        rotation_X += Input.GetAxis("Mouse Y") * sensitivity;
+        rotation_Y = Input.GetAxis("Mouse X") * sensitivity;
+        rotation_X = Input.GetAxis("Mouse Y") * sensitivity;
 
-        this.transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+        this.transform.Rotate(0f, rotation_Y, 0f, Space.World);
        
        
     }
