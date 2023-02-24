@@ -10,8 +10,6 @@ public class Projectiles : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] SphereCollider ball_collider;
 
-
-
     // The height 
     [SerializeField] float h = 25; // height arc
     [SerializeField] float gravity = -18;
@@ -29,19 +27,23 @@ public class Projectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.Space))
+        if (ball != null)
         {
-            target.Translate(0, 0, 0.05f);
 
+            trajectory_line.ShowTrajectory(ball.position, ball.velocity);
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                target.Translate(0, 0, 0.05f);
+
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                Launch();
+            }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            Launch();
-        }
-
-        trajectory_line.ShowTrajectory(ball.position, ball.velocity);
     }
 
     void Launch()
@@ -68,22 +70,8 @@ public class Projectiles : MonoBehaviour
         Vector3 velocity_y = Vector3.up * Mathf.Sqrt(-2 * gravity * h);
         Vector3 velocity_xz = displacement_xz / time;
 
-
         return new LaunchData(velocity_xz + velocity_y * -Mathf.Sign(gravity), time);
     }
-
-    //Vector3 CalculateLaunchVelocity()
-    //{
-    //    float displacement_y = target.position.y - ball.position.y;
-    //    float time = Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacement_y - h) / gravity);
-    //    Vector3 displacement_xz = new Vector3(target.position.x - ball.position.x, 0, target.position.z - ball.position.z);
-
-    //    Vector3 velocity_y = Vector3.up * Mathf.Sqrt(-2 * gravity * h);
-    //    Vector3 velocity_xz = displacement_xz / time;
-
-    //    return velocity_xz + velocity_y * -Mathf.Sin(gravity); // Upside down arc traversal
-    //    return velocity_xz + velocity_y;
-    //}
 
     void DrawPath()
     {
@@ -96,11 +84,8 @@ public class Projectiles : MonoBehaviour
             float simulation_time = i / (float)resolution * launch_data.time_to_target;
             Vector3 displacement = launch_data.initial_velocity * simulation_time + Vector3.up * gravity * simulation_time * simulation_time / 2f;
             Vector3 draw_point = ball.position + displacement;
-            //Debug.DrawLine(previous_draw_point, draw_point, Color.green);
 
             previous_draw_point = draw_point;
-
-
         }
     }
 
@@ -115,8 +100,6 @@ public class Projectiles : MonoBehaviour
             this.initial_velocity = _initial_velocity;
             this.time_to_target = _time_to_target;
         }
-
-
     }
 
 }

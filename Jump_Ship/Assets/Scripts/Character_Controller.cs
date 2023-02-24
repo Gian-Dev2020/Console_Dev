@@ -28,10 +28,10 @@ public class Character_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotation_Y = Input.GetAxis("Mouse X") * sensitivity;
-        rotation_X = Input.GetAxis("Mouse Y") * sensitivity;
+        //rotation_Y = Input.GetAxis("Mouse X") * sensitivity;
+        //rotation_X = Input.GetAxis("Mouse Y") * sensitivity;
 
-        this.transform.Rotate(0f, rotation_Y, 0f, Space.Self);
+        //this.transform.Rotate(0f, rotation_Y, 0f, Space.Self);
 
         Movement();
     }
@@ -44,27 +44,36 @@ public class Character_Controller : MonoBehaviour
 
     void Walking()
     {
+       
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * Time.deltaTime * speed;
+            Vector3 rotation = new Vector3(0, 0, 0);
+            transform.eulerAngles = rotation;
 
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += -transform.forward * Time.deltaTime * speed;
+            transform.position += transform.forward * Time.deltaTime * speed;
+            Vector3 rotation = new Vector3(0, 180, 0);
+            transform.eulerAngles = rotation;
 
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += -transform.right * Time.deltaTime * speed;
+            transform.position += transform.forward * Time.deltaTime * speed;
+            Vector3 rotation = new Vector3(0, -90, 0);
+            transform.eulerAngles = rotation;
 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * Time.deltaTime * speed;
+            transform.position += transform.forward * Time.deltaTime * speed;
+            Vector3 rotation = new Vector3(0, 90, 0);
+            transform.eulerAngles = rotation;
 
         }
     }
