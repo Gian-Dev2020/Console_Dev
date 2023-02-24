@@ -29,6 +29,7 @@ public class AgentController : MonoBehaviour
     {
         if (usePathPoints)
         {
+            walking = true;
             agent.SetDestination(pathPoints[currentPathPoint].transform.position);
         }
     }
@@ -51,6 +52,11 @@ public class AgentController : MonoBehaviour
     {
         walking = true;
         currentPathPoint++;
+        if (currentPathPoint >= pathPoints.Count)
+        {
+            currentPathPoint = 0;
+        }
+        
         agent.SetDestination(pathPoints[currentPathPoint].transform.position);
     }
 }
