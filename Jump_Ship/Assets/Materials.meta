@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Jump_Ship/Assets/Materials.meta
 guid: a09ffd5ccacd3ee428a7b69f424664a1
 folderAsset: yes
+========
+guid: 908752ff184852443a4e736a17c0e988
+>>>>>>>> 3c6a9270f838c40d6e746732cb1dcaa749b4646f:Jump_Ship/Assets/PolygonSciFiSpace/URP_ExtractMe.unitypackage.meta
+=======
+guid: 9c963b0b5b9eaa44c8b7f11fab19daf4
+folderAsset: yes
+>>>>>>> 3c6a9270f838c40d6e746732cb1dcaa749b4646f
 DefaultImporter:
   externalObjects: {}
   userData: 
