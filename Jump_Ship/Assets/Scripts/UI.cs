@@ -43,6 +43,7 @@ public class UI : MonoBehaviour
 
             if (countdown <= 0)
             {
+                // Only return the value to 1 once the timer runs out.
                 minus_one = 1;
                 start_countdown = false;
             }
@@ -61,15 +62,17 @@ public class UI : MonoBehaviour
 
     void UseAbility()
     {
-
+        // Abilities can only be used if the ability amount is still above zero
         if (Input.GetKeyDown(use_ability_1) && ability_amount_1 > 0)
         {
+            // When an ability is used minus one to the stock amount then set the minus_one to zero so that the player can't use it consecutively
             ability_amount_1 -= minus_one;
 
             start_countdown = true;
             timer_1 = 3f;
             minus_one = 0;
 
+            // Set the countdown timer to the timer associated with the ability
             if (countdown <= 0)
             {
                 countdown = timer_1;
