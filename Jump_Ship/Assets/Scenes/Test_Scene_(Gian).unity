@@ -319,7 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140150533}
-  m_LocalRotation: {x: 0.13005781, y: 0.000000020082535, z: -0.000000002663618, w: 0.99150646}
+  m_LocalRotation: {x: 0.1300578, y: 0.000000017578289, z: -0.0000000023351308, w: 0.99150646}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -441,9 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a364275e7a28c64188a9f94969750d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turning_time_smoothing: 0.1
-  speed: 2
-  camera: {fileID: 1783738953}
 --- !u!143 &164944352
 CharacterController:
   m_ObjectHideFlags: 0
@@ -886,7 +883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416894058}
-  m_LocalRotation: {x: 0.1144475, y: -0.000000034209716, z: 0.0000000039118153, w: 0.9934293}
+  m_LocalRotation: {x: 0.11444747, y: 0.000000005328154, z: -6.431231e-10, w: 0.9934293}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1231,8 +1228,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581501034}
-  m_LocalRotation: {x: -0.02816116, y: 8.1959754e-13, z: -2.9092284e-11, w: 0.9996034}
-  m_LocalPosition: {x: -1.933045e-10, y: -3.3209465, z: 4.485733}
+  m_LocalRotation: {x: 0.12442322, y: 0.00000003305747, z: -0.000000004174661, w: 0.9922293}
+  m_LocalPosition: {x: -3.12329e-11, y: -0.5365772, z: 0.29276276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1761,11 +1758,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1620399508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a364275e7a28c64188a9f94969750d6, type: 3}
+  m_Script: {fileID: 11500000, guid: fd1889ec2b7bee744bb6c090cf252d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turning_time_smoothing: 0.1
-  speed: 6
+  speed: 5
   camera: {fileID: 1783738953}
 --- !u!54 &1620399519
 Rigidbody:
@@ -2148,7 +2145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783738950}
-  m_LocalRotation: {x: 0.13005783, y: 0.000000024934897, z: -0.0000000032707592, w: 0.99150646}
+  m_LocalRotation: {x: 0.13005781, y: 0.000000017582076, z: -0.000000002306275, w: 0.99150646}
   m_LocalPosition: {x: 0, y: 4.01, z: -57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
