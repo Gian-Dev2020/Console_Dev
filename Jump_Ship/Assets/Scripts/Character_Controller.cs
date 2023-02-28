@@ -8,11 +8,14 @@ public class Character_Controller : MonoBehaviour
     float rotation_X = 0f;
     float rotation_Y = 0f;
 
-    [SerializeField] float sensitivity;
+   // [SerializeField] float sensitivity;
+    [SerializeField] float turning_time_smoothing;
+    [SerializeField] float speed;
+    [SerializeField] Transform camera;
 
-    float speed;
     float sprint_speed = 10f;
     float walk_speed = 5f;
+    float turn_velocity;
     Rigidbody rb;
     Vector2 turn;
 
@@ -52,11 +55,15 @@ public class Character_Controller : MonoBehaviour
 
         if(direction.magnitude >= 0.1f)
         {
-            float target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            float target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_velocity, turning_time_smoothing);
+            Vector3 move_direction = Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward;
 
-            transform.rotation = Quaternion.Euler(0f, target_angle, 0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            controller.Move(direction * speed * Time.deltaTime);
+
+
+            controller.Move(move_direction.normalized * speed * Time.deltaTime);
         }
 
 
