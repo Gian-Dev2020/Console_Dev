@@ -8,7 +8,7 @@ public class Projectiles : MonoBehaviour
     [SerializeField] Rigidbody ball;
     [SerializeField] Transform target;
     [SerializeField] GameObject player;
-    [SerializeField] SphereCollider ball_collider;
+   // [SerializeField] SphereCollider ball_collider;
 
     // The height 
     [SerializeField] float h = 25; // height arc
@@ -21,7 +21,7 @@ public class Projectiles : MonoBehaviour
     {
         ball.useGravity = false;
         target.position = player.transform.position;
-        target.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
