@@ -44,38 +44,55 @@ public class Character_Controller : MonoBehaviour
 
     void Walking()
     {
-       
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            Vector3 rotation = new Vector3(0, 0, 0);
-            transform.eulerAngles = rotation;
 
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+
+        if(direction.magnitude >= 0.1f)
+        {
+            float target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(0f, target_angle, 0f);
+
+            controller.Move(direction * speed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            Vector3 rotation = new Vector3(0, 180, 0);
-            transform.eulerAngles = rotation;
 
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            Vector3 rotation = new Vector3(0, -90, 0);
-            transform.eulerAngles = rotation;
+       ////// OLD SYSTEM ///////
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.position += transform.forward * Time.deltaTime * speed;
+        //    Vector3 rotation = new Vector3(0, 0, 0);
+        //    transform.eulerAngles = rotation;
 
-        }
+        //}
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            Vector3 rotation = new Vector3(0, 90, 0);
-            transform.eulerAngles = rotation;
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.position += transform.forward * Time.deltaTime * speed;
+        //    Vector3 rotation = new Vector3(0, 180, 0);
+        //    transform.eulerAngles = rotation;
 
-        }
+        //}
+
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.position += transform.forward * Time.deltaTime * speed;
+        //    Vector3 rotation = new Vector3(0, -90, 0);
+        //    transform.eulerAngles = rotation;
+
+        //}
+
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.position += transform.forward * Time.deltaTime * speed;
+        //    Vector3 rotation = new Vector3(0, 90, 0);
+        //    transform.eulerAngles = rotation;
+
+        //}
     }
 
     void Sprinting()
