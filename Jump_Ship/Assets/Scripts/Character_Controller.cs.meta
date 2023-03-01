@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Jump_Ship/Assets/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs.meta
+guid: fd1889ec2b7bee744bb6c090cf252d3b
+timeCreated: 1512843006
+licenseType: Store
+========
+guid: 6a364275e7a28c64188a9f94969750d6
+>>>>>>>> Throw-Objects-(Gian):Jump_Ship/Assets/Scripts/Character_Controller.cs.meta
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
