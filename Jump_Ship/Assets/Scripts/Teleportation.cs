@@ -12,7 +12,7 @@ public class Teleportation : MonoBehaviour
     int teleportDist;
 
     //-----TEST-----------
-    public GameObject cube;
+    //public GameObject cube;
 
     // Start is called before the first frame update
     void Start()
