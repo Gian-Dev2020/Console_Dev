@@ -2,13 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PolygonScifiSpace_Ship_01_A
   m_Shader: {fileID: 4800000, guid: 9d2e5af2a60ed6b47b96468f458e7d30, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,6 +80,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BloodAmount: 1
     - _BumpScale: 1
@@ -107,3 +110,4 @@ Material:
     - _EmissiveColor: {r: 0, g: 0.8758621, b: 1, a: 0}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _Spec: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []
