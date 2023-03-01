@@ -12,12 +12,14 @@ public class Character_Controller : MonoBehaviour
     [SerializeField] float turning_time_smoothing;
     [SerializeField] float speed;
     [SerializeField] Transform camera;
+    [SerializeField] float gravity;
 
     float sprint_speed = 10f;
     float walk_speed = 5f;
     float turn_velocity;
     Rigidbody rb;
     Vector2 turn;
+    Vector3 fall;
 
     // Start is called before the first frame update
     void Start()
@@ -61,10 +63,13 @@ public class Character_Controller : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-
+            
 
             controller.Move(move_direction.normalized * speed * Time.deltaTime);
         }
+
+        fall.y += gravity * Time.deltaTime;
+        controller.Move(fall * Time.deltaTime);
 
 
 
