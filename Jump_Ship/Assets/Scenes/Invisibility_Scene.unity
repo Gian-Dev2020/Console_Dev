@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -637,11 +637,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 137801283352551948, guid: e91fc491052840f48a62c61a286ccf07, type: 3}
+    - target: {fileID: 137801283352551948, guid: e91fc491052840f48a62c61a286ccf07,
+        type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 137801283352551948, guid: e91fc491052840f48a62c61a286ccf07, type: 3}
+    - target: {fileID: 137801283352551948, guid: e91fc491052840f48a62c61a286ccf07,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
@@ -856,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355291416}
   m_LocalRotation: {x: -0, y: -0.70816195, z: -0, w: 0.70605016}
-  m_LocalPosition: {x: 1.666, y: 0.84, z: 1.327}
+  m_LocalPosition: {x: 2.136, y: 0.84, z: 1.327}
   m_LocalScale: {x: 1, y: 1.6692, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -884,7 +886,8 @@ MonoBehaviour:
   sphereRadius: 1
 --- !u!1 &1919157169 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1710209854320498, guid: e91fc491052840f48a62c61a286ccf07, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1710209854320498, guid: e91fc491052840f48a62c61a286ccf07,
+    type: 3}
   m_PrefabInstance: {fileID: 886460645}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1919157172
@@ -1117,7 +1120,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081701721 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1246040904830286, guid: e91fc491052840f48a62c61a286ccf07, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1246040904830286, guid: e91fc491052840f48a62c61a286ccf07,
+    type: 3}
   m_PrefabInstance: {fileID: 886460645}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &2081701724
