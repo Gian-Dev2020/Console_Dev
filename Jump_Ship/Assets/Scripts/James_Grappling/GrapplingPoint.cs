@@ -75,7 +75,7 @@ public class GrapplingPoint : MonoBehaviour
     private void Grappling()
     {
         // disable player movemnt controls
-
+        Player.GetComponent<CharacterController>().enabled = false;
         // rotate player to fcae grapple point
 
         // animation to grapple
@@ -114,6 +114,10 @@ public class GrapplingPoint : MonoBehaviour
         {
             // arrived at destination
             lr.enabled = false;
+            // enable player controller
+            Player.GetComponent<CharacterController>().enabled = true;
+            currentlyGrappling = false;
+
         }
 
 
