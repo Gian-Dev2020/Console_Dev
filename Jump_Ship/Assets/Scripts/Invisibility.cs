@@ -44,7 +44,7 @@ public class Invisibility : MonoBehaviour
     void AbilityReset()
     {
         invisibleTimer += Time.deltaTime;
-        Debug.Log(invisibleTimer);
+        //Debug.Log(invisibleTimer);
 
         if (invisibleTimer > 5.0f)
         {
