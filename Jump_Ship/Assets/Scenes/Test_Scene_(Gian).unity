@@ -909,8 +909,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783738950}
-  m_LocalRotation: {x: 0.14566687, y: 0, z: 0, w: 0.9893337}
-  m_LocalPosition: {x: 0, y: 4.01, z: -57}
+  m_LocalRotation: {x: 0.047245294, y: 0.44998175, z: -0.02353929, w: 0.8914764}
+  m_LocalPosition: {x: -14.942048, y: 7.4668508, z: -51.458427}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1075,6 +1075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdPersonCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3332662754462044448, guid: a89af43a204accb4a8306b28e4e3a524,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3332662754462044450, guid: a89af43a204accb4a8306b28e4e3a524,
         type: 3}
       propertyPath: m_RootOrder
@@ -1164,6 +1169,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1783738953}
+    - target: {fileID: 3902572620635415662, guid: 761c7d795977faa4e8fe71311ee13756,
+        type: 3}
+      propertyPath: h
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3902572620635415663, guid: 761c7d795977faa4e8fe71311ee13756,
         type: 3}
       propertyPath: m_RootOrder
