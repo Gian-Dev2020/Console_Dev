@@ -17375,6 +17375,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 767420177272685473, guid: 6004a239c48e75048a3491c1904d0cbe,
+        type: 3}
+      propertyPath: h
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 767420177272685476, guid: 6004a239c48e75048a3491c1904d0cbe,
         type: 3}
       propertyPath: camera
@@ -17430,6 +17435,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 767420177628063742, guid: 6004a239c48e75048a3491c1904d0cbe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 767420177814436392, guid: 6004a239c48e75048a3491c1904d0cbe,
         type: 3}
       propertyPath: m_IsActive
@@ -17439,6 +17449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346904582936953249, guid: 6004a239c48e75048a3491c1904d0cbe,
+        type: 3}
+      propertyPath: m_XAxis.m_Wrap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346904582936953249, guid: 6004a239c48e75048a3491c1904d0cbe,
+        type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4363198990424835233, guid: 6004a239c48e75048a3491c1904d0cbe,
         type: 3}
