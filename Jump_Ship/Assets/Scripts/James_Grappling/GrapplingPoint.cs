@@ -93,7 +93,8 @@ public class GrapplingPoint : MonoBehaviour
         //direction.y = 0;
 
         // turns to face grappling point
-        Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
+        //Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
+
         Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z)), rotationSpeed * Time.deltaTime);
 
         if (direction.magnitude > 0.1)
