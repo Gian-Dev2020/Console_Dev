@@ -18,6 +18,7 @@ public class AgentController : MonoBehaviour
     [SerializeField] LayerMask hitmask;
     [SerializeField] float sightDistance = 10f;
     [SerializeField] float sphereCastRadius = 2f;
+    [SerializeField] Invisibility Player;
     private int currentPathPoint = 0;
     private RaycastHit info = new RaycastHit();
 
@@ -59,8 +60,10 @@ public class AgentController : MonoBehaviour
     {        
         if(Physics.SphereCast(new Ray(this.transform.position, this.transform.forward), sphereCastRadius, out info, sightDistance, hitmask, QueryTriggerInteraction.Ignore))
         {
-
-            Debug.Log("Player has been seen by me:  " + agentType + "  " + this.gameObject.name);
+            if (Invisibility.detectable)
+            {
+                Debug.Log("Player has been seen by me:  " + agentType + "  " + this.gameObject.name);
+            }            
         }
     }
 
