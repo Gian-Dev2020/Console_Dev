@@ -24,7 +24,6 @@ public class Character_Controller : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-        speed = walk_speed;
 
     }
 
