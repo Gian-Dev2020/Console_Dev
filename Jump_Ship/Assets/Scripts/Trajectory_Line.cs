@@ -11,17 +11,17 @@ public class Trajectory_Line : MonoBehaviour
 
     [SerializeField, Min(1)] float time_of_flight = 5;
 
-    public void ShowTrajectory(Vector3 start_point, Vector3 start_velocity)
+    public void ShowTrajectory(Vector3 start_point, Vector3 start_velocity, Vector3 target_position)
     {
         float time_step = time_of_flight / line_segments;
 
-        Vector3[] line_renderer_points = CalculateLineTrajectory(start_point, start_velocity, time_step);
+        Vector3[] line_renderer_points = CalculateLineTrajectory(start_point, start_velocity, target_position, time_step);
 
         line_renderer.positionCount = line_segments;
         line_renderer.SetPositions(line_renderer_points);
     }
 
-    Vector3[] CalculateLineTrajectory(Vector3 start_point, Vector3 start_velocity, float time_step)
+    Vector3[] CalculateLineTrajectory(Vector3 start_point, Vector3 start_velocity, Vector3 target_position, float time_step)
     {
         Vector3[] line_renderer_points = new Vector3[line_segments];
 
