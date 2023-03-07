@@ -17,6 +17,8 @@ public class Projectiles : MonoBehaviour
 
     [SerializeField] Trajectory_Line trajectory_line;
 
+    
+
     private void Start()
     {
         ball.useGravity = false;
@@ -30,7 +32,7 @@ public class Projectiles : MonoBehaviour
         if (ball != null)
         {
 
-            trajectory_line.ShowTrajectory(ball.position, ball.velocity);
+            trajectory_line.ShowTrajectory(ball.position, );
 
             if (Input.GetKey(KeyCode.Space))
             {
