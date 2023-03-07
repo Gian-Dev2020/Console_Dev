@@ -8,7 +8,7 @@ public class Projectiles : MonoBehaviour
     [SerializeField] Rigidbody ball;
     [SerializeField] Transform target;
     [SerializeField] GameObject player;
-   // [SerializeField] SphereCollider ball_collider;
+    // [SerializeField] SphereCollider ball_collider;
 
     // The height 
     [SerializeField] float h = 25; // height arc
@@ -21,7 +21,7 @@ public class Projectiles : MonoBehaviour
     {
         ball.useGravity = false;
         target.position = player.transform.position;
-        
+
     }
 
     // Update is called once per frame
@@ -30,7 +30,6 @@ public class Projectiles : MonoBehaviour
         if (ball != null)
         {
 
-            trajectory_line.ShowTrajectory(ball.position, ball.velocity);
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -41,6 +40,7 @@ public class Projectiles : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 Launch();
+                trajectory_line.ShowTrajectory(ball.position, ball.velocity);
             }
         }
 
