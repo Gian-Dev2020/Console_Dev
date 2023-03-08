@@ -24,6 +24,8 @@ public class Invisibility : MonoBehaviour
 
         detectable = true;
         timerStarted = false;
+
+        invisibleSkin.SetFloat("_Noise_Stength", 0);
     }
 
     // Update is called once per frame
@@ -33,11 +35,14 @@ public class Invisibility : MonoBehaviour
         {
             detectable = false;
             meshRenderer.material = invisibleSkin;
+            invisibleSkin.SetFloat("_Noise_Stength", 30);
+            invisibleSkin.SetFloat("_Speed", 2.0f);
             timerStarted = true;
         }
         if (timerStarted)
         {
             AbilityReset();
+            
         }
     }
 
@@ -48,6 +53,7 @@ public class Invisibility : MonoBehaviour
 
         if (invisibleTimer > 5.0f)
         {
+            invisibleSkin.SetFloat("_Speed", 1.0f);
             detectable = true;
             meshRenderer.material = defaultSkin;
             invisibleTimer = 0.0f;
