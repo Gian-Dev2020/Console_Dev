@@ -7,16 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_InvisibleLayer
-  m_Shader: {fileID: -6465566751694194690, guid: a40aac77ee4915c48ad41dee30dfa7ce, type: 3}
+  m_Name: Mat_Invisibility
+  m_Shader: {fileID: -6465566751694194690, guid: 4819bf297e311de4ba1405620f9fd77b, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ALPHAMODULATE_ON
-  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -46,8 +44,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Hexagon:
-        m_Texture: {fileID: 0}
+    - _HexTex:
+        m_Texture: {fileID: 2800000, guid: 677a89698e6ea8142a6f324563eb7abc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -85,9 +83,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 3
+    - _Blend: 0
     - _BumpScale: 1
-    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -96,12 +93,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Strength: 2
+    - _Fresnel_Power: 2.02
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _Offset: 5.84
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -109,19 +107,20 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 2
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WaveFrequency: 2
+    - _WaveSpeed: 8.5
     - _WorkflowMode: 1
-    - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 9.537255, b: 12.047059, a: 0.6156863}
+    - _Color: {r: 0, g: 1.0039216, b: 1.254902, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Lerping: {r: 0.003, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1253400729073201495
+--- !u!114 &4652481827182488848
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

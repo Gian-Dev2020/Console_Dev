@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.22491607, g: 0.20044807, b: 0.14755985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,14 +210,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674600981}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.17847838, y: -0.43567032, z: -0.45066258, w: 0.75844586}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.005, y: -55.885, z: -57.718}
 --- !u!114 &674600984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2081701721}
   defaultSkin: {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
-  invisibleSkin: {fileID: 2100000, guid: df8245c3f645bf344ac60c59fbee2630, type: 2}
+  invisibleSkin: {fileID: 2100000, guid: 126adad7c1aee7043b756df509490d46, type: 2}
 --- !u!1 &2021813835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,8 +1493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2022342655}
-  defaultSkin: {fileID: 2100000, guid: 2ba91bc7669f9bc4aaadf85ea77e2ab8, type: 2}
-  invisibleSkin: {fileID: 2100000, guid: df8245c3f645bf344ac60c59fbee2630, type: 2}
+  defaultSkin: {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
+  invisibleSkin: {fileID: 2100000, guid: 126adad7c1aee7043b756df509490d46, type: 2}
 --- !u!65 &2022342657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1528,7 +1528,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd73fea83e547e441aaf93164c43f035, type: 2}
+  - {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
