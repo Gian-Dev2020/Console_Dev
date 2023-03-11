@@ -65,6 +65,8 @@ public class AgentController : MonoBehaviour
                 Debug.Log("Player has been seen by me:  " + agentType + "  " + this.gameObject.name);
             }            
         }
+
+        
     }
 
     void UpdatePathPoint()
