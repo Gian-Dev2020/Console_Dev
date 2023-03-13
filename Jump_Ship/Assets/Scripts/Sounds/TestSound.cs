@@ -20,6 +20,8 @@ namespace GamePlay
 
             var sound = new Sound(transform.position, sound_range);
 
+            Sounds.MakeSound(sound);
+
             Debug.Log("Sound created");
         }
     }
