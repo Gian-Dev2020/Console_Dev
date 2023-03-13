@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Teleportation : MonoBehaviour
 {
+    [SerializeField]
     GameObject player;
 
     Vector3 playerPos;
@@ -30,8 +31,11 @@ public class Teleportation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("Player position is: " + playerPos);
+           // player.GetComponent<CharacterController>().enabled = false;
             player.transform.position = teleportPos;
+            Debug.Log("Player position is: " + playerPos);
+            //player.GetComponent<CharacterController>().enabled = true;
+
         }
     }
 }
